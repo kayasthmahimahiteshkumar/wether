@@ -4,6 +4,10 @@ import requests
 app = Flask(__name__)
 
 API_KEY = '967bfdc8964e9e068872985829caf92d'  # Replace with your OpenWeatherMap API key
+@app.route('/')
+def home():
+    return render_template("index.html")  # Make sure 'index.html' exists inside a 'templates' folder
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
